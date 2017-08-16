@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+nix-build && rsync -aL --delete result/ dist

@@ -1,0 +1,13 @@
+{
+  "name": "ts-refined",
+  "version": "0.1.0",
+  "repository": "https://github.com/jedahu/ts-refined.git",
+  "devDependencies": {
+    "typescript": "^2.4.2"
+  },
+  "description": "Refined types for Typescript",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "author": "Jeremy Hughes <jedahu@gmail.com>",
+  "license": "MIT"
+}
