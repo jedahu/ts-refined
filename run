@@ -15,7 +15,7 @@ run-usage() {
 }
 
 run-build() {
-    nix-build "$@" && rsync -aL --delete result/ dist
+    nix-build "$@" && rsync -aL --delete --chmod +w result/ dist
 }
 
 run-pack() {
