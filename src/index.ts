@@ -67,7 +67,6 @@ export class Nil implements Refinement<any> {
 // Like ~Nil~, but typed for inheritance.
 
 export class Tagged<A> implements Refinement<A> {
-    "@nominal" : "5b5618ce-ef0f-4021-a6a1-477fdefc2e16";
     test = (_ : A) => true;
 }
 
