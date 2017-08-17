@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+cmd="$1"
+
+shift
+
+run-usage() {
+    echo "run <cmd> [cmd args...]"
+    echo "    build [nix-build args...]       : build package"
+    echo "    pack [yarn package args...]     : pack package"
+    echo "    publish [yarn publish args...]  : publish package"
+    echo "    name                            : print package name"
+    echo "    version                         : print package version"
+    echo "    usage                           : print this message"
+}
+
+run-build() {
+    nix-build "$@" && rsync -aL --delete result/ dist
+}
+
+run-pack() {
+    local name=$(run-name)
+    local ver=$(run-version)
+    run-build && (cd dist && yarn pack -f "../$name-v$ver.tgz" "$@")
+}
+
+run-publish() {
+    run-build && (cd dist && yarn publish "$@")
+}
+
+run-name() {
+    node -e 'console.log(require("./package.json").name);'
+}
+
+run-version() {
+    node -e 'console.log(require("./package.json").version);'
+}
+
+case "$cmd" in
+    build|pack|publish|version)
+        run-"$cmd" "$@"
+        ;;
+    *)
+        echo "No such command: $cmd"
+        run-usage
+        exit 1
+        ;;
+esac
+
