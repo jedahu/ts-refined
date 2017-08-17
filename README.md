@@ -58,7 +58,18 @@ The tautological (always true) predicate.
 ``` {.typescript}
 export class Nil implements Refinement<any> {
     "@nominal" : "4079fcdd-99ff-4568-81d4-012b49d112dd";
-    test : (a : any) => true;
+    test = (_ : any) => true;
+}
+```
+
+The `Tagged` predicate type
+---------------------------
+
+Like `Nil`, but typed for inheritance.
+
+``` {.typescript}
+export class Tagged<A> implements Refinement<A> {
+    test = (_ : A) => true;
 }
 ```
 
