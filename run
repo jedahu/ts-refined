@@ -25,7 +25,15 @@ run-pack() {
 }
 
 run-publish() {
-    run-build && (cd dist && yarn publish "$@")
+    local ver=$(run-version)
+    run-build && (
+        cd dist && \
+            yarn publish \
+                 --new-version "$ver" \
+                 --no-git-tag-version \
+                 --non-interactive \
+                 "$@"
+    )
 }
 
 run-name() {
