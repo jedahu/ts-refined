@@ -10,7 +10,8 @@
         "strictNullChecks": true,
         "declaration": true,
         "outDir": "./dist",
-        "target": "es6"
+        "target": "es6",
+        "module": "commonjs"
     },
     "include": ["./src/*.ts"],
     "exclude": []
