@@ -58,7 +58,7 @@ export type Refinement<A> = {
 
 export class Nil implements Refinement<any> {
     "@nominal" : "4079fcdd-99ff-4568-81d4-012b49d112dd";
-    test : (a : any) => true;
+    test = (a : any) => true;
 }
 
 
