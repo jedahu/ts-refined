@@ -58,7 +58,17 @@ export type Refinement<A> = {
 
 export class Nil implements Refinement<any> {
     "@nominal" : "4079fcdd-99ff-4568-81d4-012b49d112dd";
-    test = (a : any) => true;
+    test = (_ : any) => true;
+}
+
+
+// ** The ~Tagged~ predicate type
+
+// Like ~Nil~, but typed for inheritance.
+
+export class Tagged<A> implements Refinement<A> {
+    "@nominal" : "5b5618ce-ef0f-4021-a6a1-477fdefc2e16";
+    test = (_ : A) => true;
 }
 
 
