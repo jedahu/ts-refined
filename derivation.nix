@@ -53,6 +53,7 @@ let
       [./tsconfig.json "tsconfig.json"]
       [./package.json "package.json"]
       [./yarn.lock "yarn.lock"]
+      [./README.md "README.md"]
     ];
     buildInputs = [nodejs];
     phases = "unpackPhase buildPhase";
@@ -61,7 +62,7 @@ let
 
       export NODE_PATH="${node-modules}"
       "${node-modules}/.bin/tsc" --outDir "$out"
-      cp package.json yarn.lock "$out"
+      cp package.json yarn.lock README.md "$out"
     '';
   };
 

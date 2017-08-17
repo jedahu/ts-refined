@@ -1,6 +1,6 @@
 {
   "name": "ts-refined",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "repository": "https://github.com/jedahu/ts-refined.git",
   "devDependencies": {
     "typescript": "^2.4.2"
