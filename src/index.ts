@@ -80,7 +80,7 @@ export class Tagged<A> implements Refinement<A> {
 
 export type Refined<A, T> = {
     "@nominal" : "9b68e4a3-162a-4574-ba15-347474197c4b";
-    "@tag" : T & Nil;
+    "@tag" : T & {};
 } & A;
 
 
